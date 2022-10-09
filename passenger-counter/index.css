@@ -7,8 +7,8 @@ body {
     text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
-    color:#9EB617;
-    
+    text-shadow: 0 0 4px white;
+    height: 100vh;
 }
 
 h1 {
@@ -34,14 +34,21 @@ button {
 }
 
 #increment-btn {
-    background: darkred;
+    background-color:#353434;
+    outline: none;
+    border: none
+
 }
 
 #save-btn {
-    background: darkgreen;
+        background-color:#353434;
+
 }
+
 
 .width{
     max-width: 600px;
-    margin:50px auto
+    margin:50px auto;
+    background: rgba(0,0,0,0.9);
+    padding:10px;
 }
