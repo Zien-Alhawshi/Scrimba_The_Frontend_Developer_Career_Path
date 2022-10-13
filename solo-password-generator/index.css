@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1c1c1c;
+}
+
+.content.dark {
+  background-color: #ecfdf5;
+}
+.head.dark {
+  color: #2b283a;
+}
+.par.dark {
+  color: #6b7280;
+}
+.line.dark {
+  border: 1px solid #d5d4d8;
+}
+
+.toggle {
+  width: 5rem;
+  height: 5rem;
+  margin-top: 50px;
+  margin-right: 10px;
+  align-items: start;
+  border-radius: 50%;
+  cursor: pointer;
+  float: right;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.toggle i {
+  font-size: 4rem;
+  color: #777;
+}
+
+/* Dark Light switch style end here */
+.containera {
+  background-color: #1c1c1c;
+  width: 900px;
+  height: 650px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
+.content {
+  background-color: #1f2937;
+  width: 90%;
+  height: 90%;
+  margin-top: 25%;
+  margin-right: -50%;
+}
+.info {
+  margin: 10% 10%;
+  font-family: "Karla", sans-serif;
+}
+.info h1 {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 50px;
+  color: white;
+  width: 360px;
+}
+.random {
+  color: #4adf86;
+}
+
+.par {
+  color: #d5d4d8;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  width: 385px;
+}
+button {
+  margin-top: 30px;
+  width: 200px;
+  height: 40px;
+  background-color: #4adf86;
+  border: none;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-weight: bold;
+}
+.line {
+  margin-top: 40px;
+  border: 1px solid #2f3e53;
+}
+.pass {
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.pass input {
+  background-color: #273549;
+  width: 300px;
+  height: 20px;
+  text-align: center;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  color: #5def92;
+  font-family: "Inter", sans-serif;
+  padding: 10px 0px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+}
+#length {
+  background-color: #1c1c1c;
+  width: 200px;
+  height: 40px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  margin: 0 20px 0px 0px;
+  border: none;
+  outline: none;
+  background-color: #4adf86;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+::placeholder {
+  color: white;
+  font-weight: bold;
+}
+.passOptions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  color: #d5d4d8;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+}
+.passOptions input {
+  margin-top: -20px;
+  margin-right: -20px;
+}
