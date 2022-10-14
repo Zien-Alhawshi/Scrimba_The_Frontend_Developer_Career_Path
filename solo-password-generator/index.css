@@ -44,17 +44,15 @@ body {
   background-color: #1c1c1c;
   width: 900px;
   height: 650px;
-
   display: flex;
-  flex-direction: row;
-  justify-content: end;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .content {
   background-color: #1f2937;
   width: 90%;
   height: 90%;
-  margin-top: 25%;
   margin-right: -50%;
 }
 .info {
@@ -118,7 +116,6 @@ button {
   color: #5def92;
   font-family: "Inter", sans-serif;
   padding: 10px 0px;
-  /* font-weight: bold; */
   outline: none;
   border: none;
 }
@@ -134,17 +131,17 @@ button {
   margin: 0 20px 0px 0px;
   border: none;
   outline: none;
-  /* background-color: #4adf86; */
   color: white;
   font-family: "Inter", sans-serif;
   font-size: 15px;
   text-align: center;
   font-weight: normal;
-  font-style: italic;
+  /* font-style: italic; */
 }
 ::placeholder {
   color: white;
   font-weight: bold;
+  font-style: none;
 }
 .passOptions {
   margin-top: 30px;
