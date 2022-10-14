@@ -2,6 +2,7 @@ const toggle = document.querySelector(".toggle");
 const content = document.querySelector(".content");
 const header = document.querySelector(".head");
 const par = document.querySelector(".par");
+const pass = document.querySelector(".passOptions ");
 const line = document.querySelector(".line");
 let passwordEl1 = document.getElementById("password1");
 let passwordEl2 = document.getElementById("password2");
@@ -230,6 +231,9 @@ toggle.addEventListener("click", () => {
 });
 toggle.addEventListener("click", () => {
   line.classList.toggle("dark");
+});
+toggle.addEventListener("click", () => {
+  pass.classList.toggle("dark");
 });
 function saveVal() {
   passwrdLength = lengthEl.value;

@@ -16,7 +16,9 @@ body {
 .line.dark {
   border: 1px solid #d5d4d8;
 }
-
+.passOptions.dark {
+  color: #6b7280;
+}
 .toggle {
   width: 5rem;
   height: 5rem;
@@ -77,7 +79,7 @@ body {
   width: 385px;
 }
 button {
-  margin-top: 30px;
+  margin-top: 15px;
   width: 200px;
   height: 40px;
   background-color: #4adf86;
@@ -116,7 +118,7 @@ button {
   color: #5def92;
   font-family: "Inter", sans-serif;
   padding: 10px 0px;
-  font-weight: bold;
+  /* font-weight: bold; */
   outline: none;
   border: none;
 }
@@ -132,11 +134,13 @@ button {
   margin: 0 20px 0px 0px;
   border: none;
   outline: none;
-  background-color: #4adf86;
+  /* background-color: #4adf86; */
   color: white;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
+  font-weight: normal;
+  font-style: italic;
 }
 ::placeholder {
   color: white;

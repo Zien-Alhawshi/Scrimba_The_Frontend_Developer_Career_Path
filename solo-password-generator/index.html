@@ -39,9 +39,8 @@
           <input
             onchange="saveVal()"
             id="length"
-            placeholder="Enter password length"
+            placeholder="Add password length"
           />
-          <button onclick="gen()" id="generate">Generate passwords</button>
           <div class="passOptions">
             
                 <input onchange="digit()" type="radio" id="dig" name="passOption">
@@ -52,6 +51,8 @@
                 <label for="dig_let"> Digits and letters</label><br><br>
       
           </div>
+          <button onclick="gen()" id="generate">Generate passwords</button>
+
           <hr class="line" />
           <div class="pass">
             <input id="password1" onclick="copy1()"></p>
