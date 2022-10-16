@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="switch">
+          <button id="switch" type="button" class="theme-icon">
+            <i
+              aria-hidden="true"
+              class="fas fa-moon fa-2x"
+              title="Toggle between dark and light mode"
+            ></i>
+            <i
+              aria-hidden="true"
+              class="fas fa-sun fa-2x"
+              title="Toggle between dark and light mode"
+            ></i>
+          </button>
+        </div>
+        <h1>Metric/Imperial Unit Conversion</h1>
+        <input id="input-el" type="text" />
+        <button id="convert-el">Convert</button>
+      </div>
+      <div class="res">
+        <div class="card">
+          <h2>Length (Meter/Feet)</h2>
+          <p id="meter-el">Your answer will be shown here</p>
+        </div>
+        <div class="card">
+          <h2>Volume (Liters/Gallons)</h2>
+          <p id="liter-el">Your answer will be shown here</p>
+        </div>
+
+        <div class="card">
+          <h2>Mass (Kilograms/Pounds)</h2>
+          <p id="kilo-el">Your answer will be shown here</p>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
