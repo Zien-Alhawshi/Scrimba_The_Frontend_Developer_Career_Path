@@ -74,7 +74,7 @@ header img {
 .img-row {
   display: flex;
 }
-.img-row img {
+.img-row i {
   width: 30px;
   height: 30px;
   margin: 15px 10px 15px 0px;
@@ -90,15 +90,7 @@ header img {
 span.user-name {
   font-weight: 700;
 }
-.img-row img:hover {
-  background-color: pink;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  opacity: 0.8;
-}
+
 .likes-count {
   padding: 5px 10px;
 }
@@ -112,7 +104,6 @@ span.user-name {
   background-position: center;
   width: 60px;
   height: 60px;
-  /* background-color: pink; */
   position: absolute;
   top: 0;
   bottom: 0;
@@ -123,7 +114,6 @@ span.user-name {
   padding: 10px;
 }
 
-.img {
-  opacity: 0.5;
-  background-color: #f7f7f7;
+.heart {
+  color: red;
 }
