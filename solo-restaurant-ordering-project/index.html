@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Font awesome CDN-->
+
+    <script
+      src="https://kit.fontawesome.com/f9f6605584.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Adding google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--adding CSS-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="outro" class="outro thanks hidden">
+        <h3>
+          Thanks, <span id="happyClient"></span>! Your order is on its way!
+        </h3>
+        <h4>Our lovely client gave us this much of stars 😍</h4>
+        <div id="stars-res">${starsRes}</div>
+      </div>
+      <div
+        id="discountWindow"
+        class="review discountPopUp discountPopupWindow hidden"
+      >
+        <h1>You have 15% discount! 😍</h1>
+        <button id="close" class="complete closeBtn">OK</button>
+      </div>
+      <div
+        id="discountWindow10"
+        class="review discountPopUp discountPopupWindow hidden"
+      >
+        <h1>You have 10% discount! 😍</h1>
+        <button id="close10" class="complete closeBtn">OK</button>
+      </div>
+
+      <div id="review" class="review hidden">
+        <h1>Review us please!</h1>
+        <span class="fa fa-star fa-2x green one"></span>
+        <span class="fa fa-star fa-2x green one"></span>
+        <span class="fa fa-star fa-2x green one"></span>
+        <span class="fa fa-star fa-2x green one"></span>
+        <span class="fa fa-star fa-2x green one"></span>
+        <button id="addReview" class="complete addReview">Add review!</button>
+      </div>
+      <div id="formParent" class="formParent hidden">
+        <div class="form">
+          <div class="formContent">
+            <h2 class="relative">
+              Enter card details
+              <button class="modal-close-btn" id="modal-close-btn">X</button>
+            </h2>
+
+            <form id="formEl">
+              <input
+                type="text"
+                id="clientName"
+                name="clientName"
+                placeholder="Enter your name"
+                required
+              />
+              <input
+                id="cardNumber"
+                name="cardNumber"
+                type="number"
+                placeholder="Enter your card number"
+                required
+              />
+              <input
+                id="ccvNumber"
+                name="ccvNumber"
+                type="number"
+                placeholder="Enter CCV"
+                required
+              />
+              <input
+                id="submit"
+                type="submit"
+                class="complete pay"
+                value="Pay"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="discountPopUp" class="review discountPopUp">
+        <h3>Order 1 Pizza with 1 Beer and get 10% discount on total</h3>
+        <h3>Order 1 Hamburger with 1 Beer and get 10% discount on total</h3>
+        <h3>Order 3 items or more and get 15% discount on total</h3>
+        <button id="closeBtn" class="complete closeBtn">OK</button>
+      </div>
+      <header>
+        <img src="./images/header.png" alt="" />
+      </header>
+      <main id="main" class="main"></main>
+    </div>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
