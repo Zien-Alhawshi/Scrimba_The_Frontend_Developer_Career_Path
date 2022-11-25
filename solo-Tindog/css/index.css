@@ -189,9 +189,55 @@ main {
   .sidebar {
     visibility: hidden;
   }
+  .container {
+    align-items: center;
+  }
   aside {
     visibility: hidden;
-  } /* show it on small screens */
+  }
+  .dog img {
+    width: 100%;
+  }
+  .dog-img {
+    margin: auto;
+  }
+  nav {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .nav ul li {
+    width: 150px;
+  }
+  .img1 {
+    width: 50px !important;
+  }
+  .logo {
+    width: 100px !important;
+  }
+  .dog {
+    width: 90%;
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .dog-card {
+    width: 100%;
+  }
+  .dog-intro {
+    text-align: left;
+    margin: 2em;
+  }
+
+  .badge {
+    width: 150px !important;
+    height: 70px !important;
+    margin: 2em 1em;
+  }
+  .dog-intro h1,
+  .dog-intro p {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (min-width: 649px) {
