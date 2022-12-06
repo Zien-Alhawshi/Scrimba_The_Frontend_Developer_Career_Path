@@ -106,11 +106,18 @@ header {
 }
 .poster {
   width: 25%;
+  height: 150px;
+  width: 100px;;
+
+
 }
 .poster img {
-  width: 100px;
-  height: 150px;
+  height: auto;
+  width:auto;
+  max-width: 100px;;
+  max-height: 150px;
 }
+
 
 .movies-info {
   display: flex;
@@ -154,4 +161,9 @@ header {
 .watchlist-add:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+.ligther-search{
+  margin-top:4em;
+  width:50%;
+  text-align: center;
 }
