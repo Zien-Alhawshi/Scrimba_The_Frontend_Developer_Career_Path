@@ -12,7 +12,7 @@ document.addEventListener("submit", function (e) {
   html = "";
 
   allFilms = [];
-  fetch(`http://www.omdbapi.com/?apikey=4d8a6d37&s=${filmName.value}`)
+  fetch(`https://www.omdbapi.com/?apikey=4d8a6d37&s=${filmName.value}`)
    .then(res=>{
      if(res.ok){
       return  res.json()
@@ -46,7 +46,7 @@ document.addEventListener("submit", function (e) {
   
 function renderFilms(filmsID){
   filmsID.forEach((element) => {
-    fetch(`http://www.omdbapi.com/?apikey=4d8a6d37&i=${element}`)
+    fetch(`https://www.omdbapi.com/?apikey=4d8a6d37&i=${element}`)
 
       .then((res) =>res.json())
       .then((data) => {
