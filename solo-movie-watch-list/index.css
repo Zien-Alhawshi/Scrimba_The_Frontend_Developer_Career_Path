@@ -167,3 +167,6 @@ header {
   width:50%;
   text-align: center;
 }
+.imdbVotes{
+  color:red;
+}

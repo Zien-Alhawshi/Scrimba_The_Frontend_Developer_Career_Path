@@ -2,11 +2,13 @@ const form = document.getElementById("form");
 const filmName = document.getElementById("film-name");
 let films = [];
 let filmsID = [];
-let selectedMovies = [];
+let selectedMovies = getFilms();
 let allFilms = [];
 let result = [];
 let html = "";
 let contentPlaceHolder = document.getElementById("content");
+
+
 
 document.addEventListener("submit", function (e) {
   html = "";
@@ -22,12 +24,14 @@ document.addEventListener("submit", function (e) {
 
    })
     .then((data) => {
-      console.log(data)
         films = data.Search;
+        localStorageFilms = getFilms();
+       
         filmsID = films.map((item) => {
           return item.imdbID;
         })
-        renderFilms(filmsID)
+        
+        renderFilms(filmsID) 
       })
       .catch(() => {
         contentPlaceHolder.innerHTML = `
@@ -46,14 +50,21 @@ document.addEventListener("submit", function (e) {
   
 function renderFilms(filmsID){
   filmsID.forEach((element) => {
+    let icon = '';
     fetch(`https://www.omdbapi.com/?apikey=4d8a6d37&i=${element}`)
 
       .then((res) =>res.json())
       .then((data) => {
-        
-          console.log(data);
-          allFilms.push(data);
 
+          allFilms.push(data);
+          if(check(selectedMovies,data.imdbID)){
+
+            icon = `<span id="${data.imdbVotes}" class="imdbVotes"> <i class="fas fa-minus-circle"></i> Remove </span>`
+          }
+          else{
+            icon = `<i class="fas fa-plus-circle"></i> Add to watchlist`
+          }
+   
           html += `
           <div class="movie">
               <img class="poster" src="${data.Poster}">
@@ -62,8 +73,7 @@ function renderFilms(filmsID){
                   <div class="movies-info">
                       <p>${data.Runtime}</p>
                       <p>  ${data.Genre}</p>
-                      <p id="">
-                      <a id="${data.imdbID}" class="watchlist-add"> <i class="fas fa-plus-circle"></i> Watchlist</a></p>
+                      <p id=""><a id="${data.imdbID}" class="watchlist-add">${icon}</a></p>
                   </div>
                 </p>
                   <p class="plot">${data.Plot}</p>
@@ -71,44 +81,96 @@ function renderFilms(filmsID){
           </div>
           `;
         
-        contentPlaceHolder.innerHTML = html;
-
-
+          contentPlaceHolder.innerHTML = html
+         
+       
+        })
       })
-      
-    
 
-  });
-}
+  }
 
-
+  // 
 
 document.addEventListener("click", function (e) {
 
-  allFilms.forEach((element) => {
-    if(element.imdbID == e.target.id ){
-      if(!selectedMovies.includes(element)){
-        storeFilms(element)
+  for (const element of allFilms) {
+    var found = false;
 
+    if(element.imdbID == e.target.id ){
+
+      for(var i = 0; i < selectedMovies.length; i++) {
+          if (selectedMovies[i].imdbID == element.imdbID) {
+              found = true;
+              break;
+          }
       }
-      document.getElementById(`${element.imdbID}`).innerHTML = `<i class="fa fa-check-circle" aria-hidden="true"></i>Added</a>`;
+      if(!found){
+        selectedMovies.push(element)
+        storeFilms(element)
+      }
+
+     
+      document.getElementById(`${element.imdbID}`).innerHTML = `<span id="${element.imdbVotes}" class="imdbVotes"><i class="fas fa-minus-circle" aria-hidden="true"></i> Remove</span>`;
       document.getElementById(`${element.imdbID}`).style.disabled = "true"
 
     }
+    else if(e.target.classList.contains("imdbVotes")){
+    
+      const indexOfObject = selectedMovies.findIndex(object => {
+        return object.imdbVotes ===  e.target.id;
+      });
+      console.log(selectedMovies)
 
-  });
+      selectedMovies.splice(indexOfObject, 1);
+      console.log(selectedMovies)
+      console.log(e.target.id)
+
+
+      localStorage.setItem("filmsData", JSON.stringify(selectedMovies));
+      classKeyword = ""
+      e.target.classList.remove("imdbVotes")
+      e.target.innerHTML = `<i class="fas fa-plus-circle"></i> Add to watch list </a>`;
+      break
+      
+    } 
+  }
 
 });
 
 
-
+function check(selected, id){
+    let found = false
+  for(var i = 0; i < selected.length; i++) {
+    if (selectedMovies[i].imdbID == id) {
+        found = true;
+        break;
+    }
+}
+return found
+}
 function storeFilms(newFilm) {
   let filmsData;
+  
   if (localStorage.getItem("filmsData") === null) {
     filmsData = [];
   } else {
     filmsData = JSON.parse(localStorage.getItem("filmsData"));
   }
-  filmsData.push(newFilm);
+  if(filmsData.includes(newFilm)){
+  }
+  else{
+    filmsData.push(newFilm);
+
+  }
   localStorage.setItem("filmsData", JSON.stringify(filmsData));
+}
+
+function getFilms() {
+  let filmsData =[];
+  if (localStorage.getItem("filmsData") === null) {
+    window.localStorage.setItem("filmsData", JSON.stringify(filmsData));
+  } else {
+      filmsData = JSON.parse(localStorage.getItem("filmsData"));
+  }
+  return filmsData;
 }
