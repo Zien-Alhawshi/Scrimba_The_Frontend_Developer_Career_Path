@@ -6,34 +6,40 @@ console.log(selected)
 
 document.addEventListener("click", function(e){
     console.log(e.target.id)
-    selected.forEach((element) => {
-    if(element.imdbID == e.target.id ){
-        const indexOfObject = selected.findIndex(object => {
-            return object.imdbID ===  e.target.id;
-          });
-          console.log(indexOfObject)
-          selected.splice(indexOfObject, 1);
-          localStorage.setItem("filmsData", JSON.stringify(selected));
-          
-
-    }
-    console.log(selected)
-    if(selected.length >0){
-        renderLocalStorage(selected)
+    if(e.target.id == ""){
+        conseole.log("Hii!")
     }
     else{
-        htmlContent = `
-        <p class="lighter">Your watchlist is looking a little empty...</p>
-        <p><i class="fas fa-plus-circle"></i> <a href="index.html"> Let's add some movies!</a></p>
-        ` 
-        render(htmlContent)
+        selected.forEach((element) => {
+            if(element.imdbID == e.target.id ){
+                const indexOfObject = selected.findIndex(object => {
+                    return object.imdbID ===  e.target.id;
+                  });
+                  console.log(indexOfObject)
+                  selected.splice(indexOfObject, 1);
+                  localStorage.setItem("filmsData", JSON.stringify(selected));
+                  
+        
+            }
+            console.log(selected)
+            if(selected.length >0){
+                renderLocalStorage(selected)
+            }
+            else{
+                htmlContent = `
+                <p class="lighter">Your watchlist is looking a little empty...</p>
+                <p><i class="fas fa-plus-circle"></i> <a href="index.html"> Let's add some movies!</a></p>
+                ` 
+                render(htmlContent)
+            }
+            
+        
+        e.preventDefault()
+          });
+          
+        
     }
-    
-
-e.preventDefault()
-  });
-  
-
+   
 
 })
 
@@ -71,5 +77,6 @@ function getFilms() {
 }
 function render(htmlContent){
     document.getElementById("localStorage").innerHTML = htmlContent
+    console.log(document.querySelector("header"))
 
 }
