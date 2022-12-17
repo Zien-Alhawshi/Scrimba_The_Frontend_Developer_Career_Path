@@ -1,0 +1,79 @@
+body{
+  margin:0;
+  padding:0;
+  font-family: 'Poppins', sans-serif;
+
+}
+.navbar{
+  padding:2em;
+  box-shadow: 0 0 10px #ccc;
+  display: flex;
+  align-items: center;
+
+}
+.navbar--img{
+  max-width: 100px;;
+}
+.grid{
+  display: flex;
+  justify-content: center;
+}
+.grid--img{
+  max-width: 800px;
+  margin:1.5em;
+}
+
+
+.card {
+  width: 175px;
+  font-size: 12px;
+  flex: 0 0 auto;         /* ADD */
+  display: flex;          /* ADD */
+  flex-direction: column; /* ADD */
+  position: relative;
+}
+
+.card--image {
+  width: 100%;
+  border-radius: 9px;
+  margin-bottom: 9px;
+}
+
+/* ADD */
+.card--title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card--stats {
+  display: flex;
+  align-items: center;
+}
+
+.card--star {
+  height: 14px;
+}
+
+/* ADD */
+.card--price {
+  margin-top: auto;
+}
+
+.card--badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: white;
+  padding: 5px 7px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+.cards-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  justify-content: center;
+  gap:2em;
+  margin:2em 0
+}
