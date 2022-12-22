@@ -1,0 +1,161 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin:0;
+  padding:0;
+  background-image: url("./assets/images/intro-page.png") ;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+ 
+}
+main{
+  height:100vh;
+  margin-top:0
+}
+/* font-family: 'Inter', sans-serif;
+font-family: 'Karla', sans-serif; */
+.no-quiz{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}
+.no-quiz h1{
+  color:#293264;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  margin:0;
+  font-size: 1.5rem;
+}
+.no-quiz p{
+  color:#293264;
+  font-family: 'Inter', sans-serif;
+  font-weight: lighter;
+  font-size: 1rem;
+
+}
+.no-quiz button, .first-btn{
+  background-color: #4D5B9E;
+  padding:.8em 3em;
+  color:#F5F7FB;
+  font-family: 'Inter', sans-serif;
+  font-weight:500;
+  font-size: 1rem;
+  border-radius: 10px;
+  border:none;
+  cursor: pointer;
+
+
+}
+.no-quiz button:active, .first-btn:active{
+  outline: none;
+}
+
+
+.quest_query h3{
+  color:#293264;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  margin:0.7em
+}
+.btn-parent{
+  padding: 1em 0;
+  display: flex;
+  flex-direction: column;
+  width:50%;
+  text-align: left;
+  margin: 0 auto ;
+  max-width: 60%;
+}
+.btn{
+  align-self: center;
+  margin-top:1em
+}
+.answers{
+  display: flex;
+  flex-direction: row;
+
+
+}
+/* .answer{
+ 
+
+/*
+}
+*/
+.answer{
+    background-color: transparent;
+  color: #293264;
+  border:1px solid #293264;
+
+  padding:0.1em 0.5em;
+  margin:0.5em;
+
+  border-radius: 10px;; 
+  cursor: pointer;
+  text-decoration: none;
+}
+.answer p {
+  margin: 0.5em
+}
+.red{
+  color:red
+}
+.checking{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:1em;
+  margin:0;
+  margin-top:1em;
+
+}
+.checking h3{
+  align-self: center;
+  justify-self: center;
+}
+.checking button{
+  padding:0.5em 2em;
+  align-self: center;
+  justify-self: center;
+  margin-top:0.5em 
+
+}
+@media(max-width:499px){
+  body{
+    background-size: 100vw 100vh;
+
+  }
+  .btn-parent{
+    width:90%;
+    margin: 0.1em auto;
+    
+  }
+  .quest_query h3{
+    width:100%
+  }
+  .answer{
+    font-size: .5rem;
+    margin-left:1.3em;
+    padding:0.5em;
+    border-radius:3px
+  }
+  .checking button{
+    padding:0.25em 1em;
+    border-radius: 0;
+  }
+  .try{
+    border-radius: 0;
+    font-size: 1rem;
+    padding:0.5em;
+
+
+  }
+ 
+}
