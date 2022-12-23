@@ -18,24 +18,42 @@ function App() {
     .then(res => res.json())
     .then(data =>{
       data.results
-          .map(ele=> quiz.push({
-        id : nanoid(),
-        category: ele.category,
-        incorrect_answers: ele.incorrect_answers,
-        correct_answer:ele.correct_answer,
-        type:ele.type,
-        question: ele.question,
-        btnColor: {backgroundColor: "transparent"},
-        selected:""
-        
-
-      }))
+          .map(ele=>{
+            const allAnswers = [...ele.incorrect_answers, ele.correct_answer]
+            const shuffledAnswers = shuffleArray(allAnswers)
+            quiz.push({
+              id : nanoid(),
+              category: ele.category,
+              incorrect_answers: ele.incorrect_answers,
+              correct_answer:ele.correct_answer,
+              all_answers: shuffledAnswers,
+              type:ele.type,
+              question: ele.question,
+              btnColor: {backgroundColor: "transparent"},
+              selected:""
+              
+      
+            })
+          }
+            
+     )
       
       setQuestions(quiz)
 
     })
 
   }
+
+  function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array // be sure to return the array!
+  }
+
   console.log(questions)
 
   // setQuestions(prev=> {
@@ -108,6 +126,7 @@ function App() {
               question ={question.question}
                 correct_answer ={question.correct_answer}
                 incorrect_answers = {question.incorrect_answers}
+                all_answers = {question.all_answers}
                 id={question.id}
                 toggle = {question.toggle}
                 setAnswer = {setAnswer}
